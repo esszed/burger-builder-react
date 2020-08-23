@@ -1,12 +1,13 @@
 import React from 'react'
 import Aux from '../../hoc/Aux'
- 
- const layout =({children})=>( 
 
-    <Aux>
-     <div> Layout Test  </div>
-    <main>{children}</main>
-    </Aux>
- )
+import { Content } from './Layout.module.css'
 
- export default layout
+const layout = ({ children }) => (
+  <Aux>
+    <div> Layout Test </div>
+    <main className={Content}>{children}</main>
+  </Aux>
+)
+
+export default layout
