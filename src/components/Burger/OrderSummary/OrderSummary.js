@@ -1,7 +1,7 @@
 import React from 'react'
 import Aux from '../../../hoc/Aux'
-
-const OrderSummary = ({ ingredients }) => {
+import Button from '../../UI/Button/Button'
+const OrderSummary = ({ ingredients, cancel, cont }) => {
   const ingredientSummary = Object.keys(ingredients).map(igKey => {
     return (
       <li key={igKey}>
@@ -16,8 +16,12 @@ const OrderSummary = ({ ingredients }) => {
       <p>Your ingredients:</p>
       <ul>{ingredientSummary}</ul>
       <p>Checkout?</p>
-      <button>CANCEL</button>
-      <button>CONTINUE</button>
+      <Button btnType='Danger' clicked={cancel}>
+        CANCEL
+      </Button>
+      <Button btnType='Success' clicked={cont}>
+        CONTINUE
+      </Button>
     </Aux>
   )
 }
