@@ -1,7 +1,7 @@
 import React from 'react'
 import Aux from '../../../hoc/Aux'
 import Button from '../../UI/Button/Button'
-const OrderSummary = ({ ingredients, cancel, cont }) => {
+const OrderSummary = ({ ingredients, cancel, cont, price }) => {
   const ingredientSummary = Object.keys(ingredients).map(igKey => {
     return (
       <li key={igKey}>
@@ -15,6 +15,7 @@ const OrderSummary = ({ ingredients, cancel, cont }) => {
       <h3>Your order</h3>
       <p>Your ingredients:</p>
       <ul>{ingredientSummary}</ul>
+      <p>The total price ${price.toFixed(2)}</p>
       <p>Checkout?</p>
       <Button btnType='Danger' clicked={cancel}>
         CANCEL
