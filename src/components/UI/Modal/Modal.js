@@ -16,5 +16,5 @@ const Modal = ({ children, show, clicked }) => (
     </div>
   </Aux>
 )
-
-export default Modal
+const showIsEqual = (prevModal, nextModal) => prevModal.show === nextModal.show
+export default React.memo(Modal, showIsEqual)
