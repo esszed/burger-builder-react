@@ -1,5 +1,5 @@
 import React from 'react'
-import Aux from '../../../hoc/Aux'
+import Aux from '../../../hoc/Aux/Aux'
 import Button from '../../UI/Button/Button'
 const OrderSummary = ({ ingredients, cancel, cont, price }) => {
   const ingredientSummary = Object.keys(ingredients).map(igKey => {
