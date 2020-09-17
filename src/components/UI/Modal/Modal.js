@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal as ModalClass } from './Modal.module.css'
 import Aux from '../../../hoc/Aux/Aux'
 import Backdrop from '../Backdrop/Backdrop'
-const Modal = ({ children, show, clicked }) => (
+const Modal = ({ children, show, clicked, loading }) => (
   <Aux>
     <Backdrop clicked={clicked} show={show} />
     <div
@@ -16,5 +16,10 @@ const Modal = ({ children, show, clicked }) => (
     </div>
   </Aux>
 )
-const showIsEqual = (prevModal, nextModal) => prevModal.show === nextModal.show
-export default React.memo(Modal, showIsEqual)
+const areEqual = (prevProps, nextProps) => {
+  return (
+    prevProps.show === nextProps.show && prevProps.loading === nextProps.loading
+  )
+}
+
+export default React.memo(Modal, areEqual)
